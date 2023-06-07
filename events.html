@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background: linear-gradient(
+          -45deg,
+          #000000,
+          #262a56,
+          #b8621b,
+          #73bbc9,
+          #e3ccae
+        );
+        background-size: 400% 400%;
+        color: #fff;
+        animation: gradient-animation 15s ease infinite;
+      }
+
+      .event-card {
+        background-color: #555;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+        overflow: hidden;
+        padding: 20px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        animation: slide-in 0.5s ease;
+        position: relative;
+      }
+
+      .event-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(-45deg, #e8f3d6, #fcf9be, #ffdca9, #faab78);
+        background-size: 400% 400%;
+        animation: gradient-animation 15s ease infinite;
+        opacity: 0.6;
+        z-index: -1;
+      }
+
+      @keyframes gradient-animation {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .event-card {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .event-title {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #fff;
+      }
+
+      .event-details {
+        font-size: 14px;
+        margin-bottom: 10px;
+        color: #fff;
+      }
+
+      .event-venue {
+        font-size: 14px;
+        color: #fff;
+      }
+
+      .register-link {
+        display: inline-block;
+        margin-top: 10px;
+        font-size: 14px;
+        color: #000;
+        background: linear-gradient(-45deg, #e8f3d6, #fcf9be, #ffdca9, #faab78);
+        animation: gradient-animation 15s ease infinite;
+        border-radius: 4px;
+        padding: 8px 16px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+        opacity: 0.6;
+        z-index: -1;
+        font-weight: 900;
+      }
+
+      .register-link {
+        background-color: #0056b3;
+      }
+
+      /* Animation */
+      @keyframes slide-in {
+        from {
+          opacity: 0;
+          transform: translateX(-50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @media (min-width: 768px) {
+        .event-card {
+          display: grid;
+          grid-template-columns: 1fr 2fr;
+          align-items: center;
+        }
+
+        .event-title {
+          font-size: 24px;
+        }
+
+        .event-details {
+          font-size: 16px;
+        }
+      }
+      /* navbar */
+      .navbar {
+        overflow: hidden;
+      }
+
+      .navbar a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-weight: 900;
+        font-size: 17px;
+      }
+
+      .navbar a:hover {
+        color: black;
+      }
+
+      .navbar .icon {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar" id="myNavbar">
+      <a href="./index.html">Pantheon 2k23</a>
+      <a href="workbook.ppt">Workbook</a>
+      <a href="javascript:void(0);" class="icon" onclick="toggleNavbar()">
+        &#9776;
+      </a>
+    </div>
+    <div class="event-card">
+      <div>
+        <h2 class="event-title">The Myth of Orpheus - Western solo</h2>
+        <p class="event-details">No. of Participants: 1</p>
+        <p class="event-details">Reg fee: ₹150/-</p>
+        <p class="event-details">
+          Prize Pool: 1st Place - ₹1000, 2nd Place - ₹500
+        </p>
+      </div>
+      <p class="event-venue">Tentative Venue: Main Stage ⭐⭐⭐</p>
+      <a class="register-link" href="#">Register Now</a>
+    </div>
+
+    <div class="event-card">
+      <div>
+        <h2 class="event-title">
+          Saraswathi – The origin of Indian Music - Classical Solo
+        </h2>
+        <p class="event-details">No. of Participants: 1</p>
+        <p class="event-details">Reg fee: ₹150/-</p>
+        <p class="event-details">
+          Prize Pool: 1st Place - ₹1000, 2nd Place - ₹500
+        </p>
+      </div>
+      <p class="event-venue">Tentative Venue: Main Stage ⭐⭐⭐</p>
+      <a class="register-link" href="#">Register Now</a>
+    </div>
+
+    <div class="event-card">
+      <div>
+        <h2 class="event-title">Gandarva Recital - Semi classical solo</h2>
+        <p class="event-details">No. of Participants: 1</p>
+        <p class="event-details">Reg fee: ₹150/-</p>
+        <p class="event-details">
+          Prize Pool: 1st Place - ₹1000, 2nd Place - ₹500
+        </p>
+      </div>
+      <p class="event-venue">Tentative Venue: Admin Block Seminar Hall ⭐⭐</p>
+      <a class="register-link" href="#">Register Now</a>
+    </div>
+
+    <div class="event-card">
+      <div>
+        <h2 class="event-title">Cinematic Serenades - Indian(Cinema) Solo</h2>
+        <p class="event-details">No. of Participants: 1</p>
+        <p class="event-details">Reg fee: ₹150/-</p>
+        <p class="event-details">Prize Pool: 1st Place - ₹1000</p>
+      </div>
+      <p class="event-venue">Tentative Venue: Main Stage ⭐⭐⭐</p>
+      <a class="register-link" href="#">Register Now</a>
+    </div>
+
+    <div class="event-card">
+      <div>
+        <h2 class="event-title">
+          Apollo’s lyre – The golden instrument - Instrumental solo
+        </h2>
+        <p class="event-details">No. of Participants: 1</p>
+        <p class="event-details">Reg fee: ₹150/-</p>
+        <p class="event-details">Prize Pool: 1st Place - ₹1000</p>
+      </div>
+      <p class="event-venue">Tentative Venue: ECE Hi-tech lab ⭐⭐⭐</p>
+      <a class="register-link" href="#">Register Now</a>
+    </div>
+
+    <div class="event-card">
+      <div>
+        <h2 class="event-title">
+          The Rap Battle – Second to Battle of Titans - Rap battle
+        </h2>
+        <p class="event-details">No. of Participants: 1</p>
+        <p class="event-details">Reg fee: ₹150/-</p>
+        <p class="event-details">
+          Prize Pool: 1st Place - ₹1000, 2nd Place - ₹500
+        </p>
+      </div>
+      <p class="event-venue">Tentative Venue: Gallery ⭐⭐⭐</p>
+      <a class="register-link" href="#">Register Now</a>
+    </div>
+
+    <div class="event-card">
+      <div>
+        <h2 class="event-title">
+          Beat boxing – When the human is the instrument - Beat Boxing
+        </h2>
+        <p class="event-details">No. of Participants: 1</p>
+        <p class="event-details">Reg fee: ₹150/-</p>
+        <p class="event-details">
+          Prize Pool: 1st place - ₹1000, 2nd place - ₹500
+        </p>
+      </div>
+      <p class="event-venue">Tentative Venue: Gallery ⭐⭐⭐</p>
+      <a class="register-link" href="#">Register Now</a>
+    </div>
+
+    <div class="event-card">
+      <div>
+        <h2 class="event-title">Mythical Muse - Battle of Bands</h2>
+        <p class="event-details">No. of Participants: 7+2</p>
+        <p class="event-details">Reg fee: ₹2500/-</p>
+        <p class="event-details">Prize Pool: 1st Place - ₹10000</p>
+      </div>
+      <p class="event-venue">Tentative Venue: Main Stage ⭐⭐⭐⭐</p>
+      <a class="register-link" href="#">Register Now</a>
+    </div>
+
+    <div class="event-card">
+      <div>
+        <h2 class="event-title">The Natyashastra - Classical Solo</h2>
+        <p class="event-details">No. of Participants: 1</p>
+        <p class="event-details">Reg fee: ₹200/-</p>
+        <p class="event-details">
+          Prize Pool: 1st Place - ₹2000, 2nd Place - ₹1000
+        </p>
+      </div>
+      <p class="event-venue">Tentative Venue: Main Stage ⭐⭐⭐</p>
+      <a class="register-link" href="#">Register Now</a>
+    </div>
+
+    <div class="event-card">
+      <div>
+        <h2 class="event-title">
+          Hathor - The Goddess of Rhythm (Solo Dance (Western))
+        </h2>
+        <p class="event-details">No. of Participants: 1</p>
+        <p class="event-details">Reg fee: ₹200/-</p>
+        <p class="event-details">
+          Prize Pool: 1st Place - ₹3000, 2nd Place - ₹1500
+        </p>
+      </div>
+      <p class="event-venue">Tentative Venue: Mech quadrangle ⭐⭐⭐</p>
+      <a class="register-link" href="#">Register Now</a>
+    </div>
+
+    <div class="event-card">
+      <div>
+        <h2 class="event-title">Celestial Rendition - Group Dance (Western)</h2>
+        <p class="event-details">No. of Participants: 6-15</p>
+        <p class="event-details">Reg fee: ₹1200/-</p>
+        <p class="event-details">
+          Prize Pool: 1st Place - ₹14,000, 2nd Place - ₹7000
+        </p>
+      </div>
+      <p class="event-venue">Tentative Venue: Main Stage ⭐⭐⭐⭐</p>
+      <a class="register-link" href="#">Register Now</a>
+    </div>
+
+    <div class="event-card">
+      <div>
+        <h2 class="event-title">Harmony's Ensemble</h2>
+        <p class="event-details">
+          Smoked'23 - 1v1 breaking, all styles 2v2 all styles
+        </p>
+        <p class="event-details">Reg fee: ₹300/-</p>
+        <p class="event-details">
+          Prize Pool: 1st Place 2v2 - ₹8000, 1st Place 1v1 - ₹6000
+        </p>
+      </div>
+      <p class="event-venue">Tentative Venue: Mech quadrangle 3,3 Mat</p>
+      <a class="register-link" href="#">Register Now</a>
+    </div>
+    <div class="event-card">
+      <div>
+        <h2 class="event-title">
+          Aphrodite - The goddess of beauty - Fashion Show
+        </h2>
+        <p class="event-details">No. of Participants: 10+2</p>
+        <p class="event-details">Reg fee: ₹2500/-</p>
+        <p class="event-details">Prize Pool: 1st Place - ₹20,000</p>
+      </div>
+      <p class="event-venue">Tentative Venue: Main Stage ⭐⭐⭐⭐</p>
+      <a class="register-link" href="#">Register Now</a>
+    </div>
+
+    <div class="event-card">
+      <div>
+        <h2 class="event-title">The Mono Act - A Singular Saga - Mono Act</h2>
+        <p class="event-details">No. of Participants: 1</p>
+        <p class="event-details">Reg fee: ₹200/-</p>
+        <p class="event-details">
+          Prize Pool: 1st Place - ₹1000, 2nd Place - ₹500
+        </p>
+      </div>
+      <p class="event-venue">Tentative Venue: EC Hi-Tech Lab ⭐⭐</p>
+      <a class="register-link" href="#">Register Now</a>
+    </div>
+
+    <div class="event-card">
+      <div>
+        <h2 class="event-title">
+          Tales of Icarus - The Adventurous Innovator - Shark Tank
+        </h2>
+        <p class="event-details">No. of Participants: 2+1</p>
+        <p class="event-details">Reg fee: ₹300/-</p>
+        <p class="event-details">
+          Prize Pool: 1st Place - ₹2000, 2nd Place - ₹1000
+        </p>
+      </div>
+      <p class="event-venue">Tentative Venue: MBA Seminar Hall ⭐⭐</p>
+      <a class="register-link" href="#">Register Now</a>
+    </div>
+
+    <div class="event-card">
+      <div>
+        <h2 class="event-title">Hayagreeva's verdict - Debate</h2>
+        <p class="event-details">No. of Participants: 3+1</p>
+        <p class="event-details">Reg fee: ₹300/-</p>
+        <p class="event-details">
+          Prize Pool: 1st Place - ₹2000, 2nd Place - ₹1000
+        </p>
+      </div>
+      <p class="event-venue">Tentative Venue: EC Hi-Tech Lab ⭐⭐</p>
+      <a class="register-link" href="#">Register Now</a>
+    </div>
+
+    <div class="event-card">
+      <div>
+        <h2 class="event-title">
+          Itihasa Nataka - An Epic Recital - Street Play
+        </h2>
+        <p class="event-details">No. of Participants: 13+2</p>
+        <p class="event-details">Reg fee: ₹2000/-</p>
+        <p class="event-details">
+          Prize Pool: 1st Place - ₹5000, 2nd Place - ₹3000
+        </p>
+      </div>
+      <p class="event-venue">Tentative Venue: ISE Lawn ⭐⭐⭐⭐</p>
+      <a class="register-link" href="#">Register Now</a>
+    </div>
+
+    <div class="event-card">
+      <div>
+        <h2 class="event-title">
+          The Artistic Duo - A portrayal of Contrast - Instinct Art
+        </h2>
+        <p class="event-details">No. of Participants: 2</p>
+        <p class="event-details">Reg fee: ₹200/-</p>
+        <p class="event-details">
+          Prize Pool: 1st Place - ₹1000, 2nd Place - ₹500
+        </p>
+      </div>
+      <p class="event-venue">Tentative Venue: Mech Classroom ⭐⭐</p>
+      <a class="register-link" href="#">Register Now</a>
+    </div>
+
+    <div class="event-card">
+      <div>
+        <h2 class="event-title">Hanuman's hurdles - Fitness Witness</h2>
+        <p class="event-details">No. of Participants: 2</p>
+        <p class="event-details">Reg fee: ₹200/-</p>
+        <p class="event-details">
+          Prize Pool: 1st Place - ₹1000, 2nd Place - ₹500
+        </p>
+      </div>
+      <p class="event-venue">
+        Tentative Venue: Cricket Grounds ⭐⭐ (Decathlon sponsored)
+      </p>
+      <a class="register-link" href="#">Register Now</a>
+    </div>
+
+    <div class="event-card">
+      <div>
+        <h2 class="event-title">Souper lepto-krono's trails - Super minute</h2>
+        <p class="event-details">No. of Participants: 4</p>
+        <p class="event-details">Reg fee: ₹400/-</p>
+        <p class="event-details">
+          Prize Pool: 1st Place - ₹2000, 2nd Place - ₹1000
+        </p>
+      </div>
+      <p class="event-venue">
+        Tentative Venue: Basketball court ⭐⭐ (Needed materials for each round)
+      </p>
+      <a class="register-link" href="#">Register Now</a>
+    </div>
+
+    <div class="event-card">
+      <div>
+        <h2 class="event-title">Hapocrate's game - Dumb Charades</h2>
+        <p class="event-details">No. of Participants: 2</p>
+        <p class="event-details">Reg fee: ₹200/-</p>
+        <p class="event-details">
+          Prize Pool: 1st Place - ₹1000, 2nd Place - ₹500
+        </p>
+      </div>
+      <p class="event-venue">Tentative Venue: Admin Block Seminar Hall ⭐⭐</p>
+      <a class="register-link" href="#">Register Now</a>
+    </div>
+
+    <div class="event-card">
+      <div>
+        <h2 class="event-title">Hedjhotep's Workshop - Newspaper Vogue</h2>
+        <p class="event-details">
+          No. of Participants: 5 (4 designers + 1 model)
+        </p>
+        <p class="event-details">Reg fee: ₹300/-</p>
+        <p class="event-details">
+          Prize Pool: 1st Place - ₹2000, 2nd Place - ₹1000
+        </p>
+      </div>
+      <p class="event-venue">Tentative Venue: Mech Classroom ⭐⭐</p>
+      <a class="register-link" href="#">Register Now</a>
+    </div>
+    <div class="event-card">
+      <div>
+        <h2 class="event-title">The Lair of Ate - Beg Borrow Steal</h2>
+        <p class="event-details">No. of Participants: 2</p>
+        <p class="event-details">Reg fee: ₹200/-</p>
+        <p class="event-details">
+          Prize Pool: 1st Place - ₹1000, 2nd Place - ₹500
+        </p>
+      </div>
+      <p class="event-venue">Tentative Venue: Mech Classroom ⭐⭐</p>
+      <a class="register-link" href="#">Register Now</a>
+    </div>
+
+    <div class="event-card">
+      <div>
+        <h2 class="event-title">Gods in Scribbles - Doodle Art</h2>
+        <p class="event-details">No. of Participants: 4</p>
+        <p class="event-details">Reg fee: ₹200/-</p>
+        <p class="event-details">
+          Prize Pool: 1st Place - ₹1200, 2nd Place - ₹600
+        </p>
+      </div>
+      <p class="event-venue">Tentative Venue: Parking Lot Wall ⭐⭐</p>
+      <a class="register-link" href="#">Register Now</a>
+    </div>
+
+    <div class="event-card">
+      <div>
+        <h2 class="event-title">
+          Medusa's Hair and Jacob's Ladder - Snakes and Ladder
+        </h2>
+        <p class="event-details">No. of Participants: 1</p>
+        <p class="event-details">Reg fee: ₹100/-</p>
+        <p class="event-details">
+          Prize Pool: 1st Place - ₹500, 2nd Place - ₹300
+        </p>
+      </div>
+      <p class="event-venue">Tentative Venue: Mech Classroom ⭐⭐</p>
+      <p class="event-requirements">
+        Requirements: Tape, dice pillow, deco stuff for snake and ladder
+      </p>
+      <a class="register-link" href="#">Register Now</a>
+    </div>
+
+    <div class="event-card">
+      <div>
+        <h2 class="event-title">The Display of Manzai - Stand-Up Comedy</h2>
+        <p class="event-details">No. of Participants: 1</p>
+        <p class="event-details">Reg fee: ₹200/-</p>
+        <p class="event-details">
+          Prize Pool: 1st Place - ₹1000, 2nd Place - ₹500
+        </p>
+      </div>
+      <p class="event-venue">Tentative Venue: MBA Seminar Hall ⭐⭐</p>
+      <a class="register-link" href="#">Register Now</a>
+    </div>
+
+    <div class="event-card">
+      <div>
+        <h2 class="event-title">Valorant</h2>
+        <p class="event-details">No. of Participants: 5</p>
+        <p class="event-details">Reg fee: ₹500/-</p>
+        <p class="event-details">
+          Prize Pool: 1st Place - ₹3000, 2nd Place - ₹1500
+        </p>
+      </div>
+      <p class="event-venue">Tentative Venue: Online ⭐⭐</p>
+      <a class="register-link" href="#">Register Now</a>
+    </div>
+
+    <div class="event-card">
+      <div>
+        <h2 class="event-title">CODM</h2>
+        <p class="event-details">No. of Participants: 5</p>
+        <p class="event-details">Reg fee: ₹500/-</p>
+        <p class="event-details">
+          Prize Pool: 1st Place - ₹3000, 2nd Place - ₹1500
+        </p>
+      </div>
+      <p class="event-venue">Tentative Venue: Online ⭐⭐</p>
+      <a class="register-link" href="#">Register Now</a>
+    </div>
+
+    <div class="event-card">
+      <div>
+        <h2 class="event-title">Senet - The board game of Chess</h2>
+        <p class="event-details">No. of Participants: 1</p>
+        <p class="event-details">Reg fee: ₹100/-</p>
+        <p class="event-details">
+          Prize Pool: 1st Place - ₹1000, 2nd Place - ₹500
+        </p>
+      </div>
+      <p class="event-venue">Tentative Venue: Admin Block Seminar Hall ⭐⭐</p>
+      <p class="event-requirements">Requirements: 4-5 chess boards</p>
+      <a class="register-link" href="#">Register Now</a>
+    </div>
+
+    <div class="event-card">
+      <div>
+        <h2 class="event-title">
+          The Sphinx's test - Quiz (Mytho and movies/sports)
+        </h2>
+        <p class="event-details">No. of Participants: 2</p>
+        <p class="event-details">Reg fee: ₹100/-</p>
+        <p class="event-details">
+          Prize Pool: 1st Place - ₹700, 2nd Place - ₹350
+        </p>
+      </div>
+      <p class="event-venue">Tentative Venue: EC Hi-Tech Lab</p>
+      <a class="register-link" href="#">Register Now</a>
+    </div>
+    <div class="event-card">
+      <div>
+        <h2 class="event-title">Photography</h2>
+        <p class="event-details">No. of Participants: 1</p>
+        <p class="event-details">Reg fee: ₹100/-</p>
+        <p class="event-details">
+          Prize Pool: 1st Place - ₹1000, 2nd Place - ₹500
+        </p>
+      </div>
+      <p class="event-venue">Tentative Venue: Gallery ⭐⭐</p>
+      <a class="register-link" href="#">Register Now</a>
+    </div>
+
+    <div class="event-card">
+      <div>
+        <h2 class="event-title">Face Painting</h2>
+        <p class="event-details">No. of Participants: 2</p>
+        <p class="event-details">Reg fee: ₹200/-</p>
+        <p class="event-details">
+          Prize Pool: 1st Place - ₹1000, 2nd Place - ₹500
+        </p>
+      </div>
+      <p class="event-venue">Tentative Venue: Gallery ⭐⭐</p>
+      <a class="register-link" href="#">Register Now</a>
+    </div>
+
+    <div class="event-card">
+      <div>
+        <h2 class="event-title">Mythological Reincarnation - clay modelling</h2>
+        <p class="event-details">No. of Participants: 1</p>
+        <p class="event-details">Reg fee: ₹100/-</p>
+        <p class="event-details">
+          Prize Pool: 1st Place - ₹1000, 2nd Place - ₹500
+        </p>
+      </div>
+      <p class="event-venue">Tentative Venue: Gallery ⭐⭐</p>
+      <a class="register-link" href="#">Register Now</a>
+    </div>
+
+    <div class="event-card">
+      <div>
+        <h2 class="event-title">Pandora's Box - Treasure Hunt</h2>
+        <p class="event-details">No. of Participants: 4</p>
+        <p class="event-details">Reg fee: ₹200/-</p>
+        <p class="event-details">
+          Prize Pool: 1st Place - ₹1000, 2nd Place - ₹500
+        </p>
+      </div>
+      <p class="event-venue">Tentative Venue: Gallery (Certificates)</p>
+      <p class="event-requirements">
+        Requirements: Scroll, box, etc (deco work)
+      </p>
+      <a class="register-link" href="#">Register Now</a>
+    </div>
+
+    <div class="event-card">
+      <div>
+        <h2 class="event-title">Fenrir's rampage - The Wolf Tag</h2>
+        <p class="event-details">No. of Participants: 1</p>
+        <p class="event-details">Reg fee: ₹100/-</p>
+        <p class="event-details">
+          Prize Pool: 1st Place - ₹500, 2nd Place - ₹300
+        </p>
+      </div>
+      <p class="event-venue">Tentative Venue: Gallery (Certificates)</p>
+      <a class="register-link" href="#">Register Now</a>
+    </div>
+
+    <div class="event-card">
+      <div>
+        <h2 class="event-title">The Quest for Mythoros - Where is Waldo ?</h2>
+        <p class="event-details">No. of Participants: 3</p>
+        <p class="event-details">Reg fee: ₹200/-</p>
+        <p class="event-details">
+          Prize Pool: 1st Place - ₹600, 2nd Place - ₹400
+        </p>
+      </div>
+      <p class="event-venue">Tentative Venue: Gallery (Certificates)</p>
+      <p class="event-requirements">Requirements: Dressing up waldo</p>
+      <a class="register-link" href="#">Register Now</a>
+    </div>
+
+    <div class="event-card">
+      <div>
+        <h2 class="event-title">Agir's Banquet - Kumbhakarna's Feast</h2>
+        <p class="event-details">No. of Participants: 1</p>
+        <p class="event-details">Reg fee: ₹100/-</p>
+        <p class="event-details">
+          Prize Pool: 1st Place - ₹500, 2nd Place - ₹250
+        </p>
+      </div>
+      <p class="event-venue">
+        Tentative Venue: Mechanical block (Certificates) (Sponsored)
+      </p>
+      <a class="register-link" href="#">Register Now</a>
+    </div>
+
+    <div class="event-card">
+      <div>
+        <h2 class="event-title">Harpian Blind Dance - Blind Musical Chair</h2>
+        <p class="event-details">No. of Participants: 1</p>
+        <p class="event-details">Reg fee: ₹100/-</p>
+        <p class="event-details">
+          Prize Pool: 1st Place - ₹500, 2nd Place - ₹300
+        </p>
+      </div>
+      <p class="event-venue">
+        Tentative Venue: Quadrangle / ISE Lawn (Certificates)
+      </p>
+      <p class="event-requirements">Requirements: Blindfolds, chairs</p>
+      <a class="register-link" href="#">Register Now</a>
+    </div>
+    <script>
+      // JavaScript to trigger the animation on scroll
+      function isElementInViewport(element) {
+        var rect = element.getBoundingClientRect();
+        return (
+          rect.top >= 0 &&
+          rect.left >= 0 &&
+          rect.bottom <=
+            (window.innerHeight || document.documentElement.clientHeight) &&
+          rect.right <=
+            (window.innerWidth || document.documentElement.clientWidth)
+        );
+      }
+
+      function animateOnScroll() {
+        var cards = document.getElementsByClassName("event-card");
+
+        for (var i = 0; i < cards.length; i++) {
+          var card = cards[i];
+          if (isElementInViewport(card)) {
+            card.classList.add("visible");
+          }
+        }
+      }
+
+      window.addEventListener("scroll", animateOnScroll);
+      window.addEventListener("resize", animateOnScroll);
+      animateOnScroll();
+      function toggleNavbar() {
+        var navbar = document.getElementById("myNavbar");
+        if (navbar.className === "navbar") {
+          navbar.className += " responsive";
+        } else {
+          navbar.className = "navbar";
+        }
+      }
+    </script>
+  </body>
+</html>

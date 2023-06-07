@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PANTHEON 2k23 - Tales of Yore</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap");
+
+      body {
+        font-family: "Shadows Into Light", cursive;
+        background: linear-gradient(
+          -45deg,
+          #000000,
+          #262a56,
+          #b8621b,
+          #73bbc9,
+          #e3ccae
+        );
+        background-size: 400% 400%;
+        color: #fff;
+        animation: gradient-animation 5s ease infinite;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        text-align: center;
+      }
+
+      .fest-name {
+        font-size: 4rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+      }
+
+      .fest-name span {
+        opacity: 0;
+        animation: word-animation 5s ease-in-out infinite;
+      }
+
+      .fest-name span:nth-child(1) {
+        animation-delay: 0s;
+      }
+
+      .fest-name span:nth-child(2) {
+        animation-delay: 1s;
+      }
+
+      .fest-name span:nth-child(3) {
+        animation-delay: 2s;
+      }
+
+      .fest-name span:nth-child(4) {
+        animation-delay: 3s;
+      }
+
+      .fest-name span:nth-child(5) {
+        animation-delay: 4s;
+      }
+
+      .fest-name span:nth-child(6) {
+        animation-delay: 5s;
+      }
+
+      .fest-name span:nth-child(7) {
+        animation-delay: 6s;
+      }
+
+      .fest-name span:nth-child(8) {
+        animation-delay: 7s;
+      }
+
+      @keyframes word-animation {
+        0% {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        20% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        70% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        100% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+      }
+
+      .fest-tagline {
+        font-size: 2rem;
+        margin-bottom: 3rem;
+        animation: text-fade-in 3s ease-out;
+      }
+
+      .event-link {
+        color: #fff;
+        font-size: 1.5rem;
+        text-decoration: none;
+        background-color: #007bff;
+        border-radius: 4px;
+        padding: 10px 20px;
+        transition: background-color 0.3s ease;
+        animation: text-fade-in 3s ease-out;
+      }
+
+      .event-link:hover {
+        background-color: #0056b3;
+      }
+
+      @media screen and (max-width: 768px) {
+        .fest-name {
+          font-size: 3rem;
+        }
+
+        .fest-tagline {
+          font-size: 1.5rem;
+          margin-bottom: 2rem;
+        }
+
+        .event-link {
+          font-size: 1.2rem;
+          padding: 8px 16px;
+        }
+      }
+
+      @keyframes gradient-animation {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      @keyframes text-fade-in {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="fest-name"><span>PANTHEON</span> <span>2K23</span></h1>
+      <p class="fest-tagline">Tales of Yore</p>
+      <a class="event-link" href="./events.html">Explore Events</a>
+    </div>
+  </body>
+</html>
